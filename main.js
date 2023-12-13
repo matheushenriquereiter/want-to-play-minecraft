@@ -8,7 +8,7 @@ const moveButtonTo = (x, y) => {
   noButton.style.top = `${y}px`;
 };
 
-noButton.addEventListener("click", () => {
+const handleNoButton = () => {
   const { innerWidth, innerHeight } = window;
 
   const buttonWidth = noButton.offsetWidth;
@@ -31,7 +31,10 @@ noButton.addEventListener("click", () => {
   }
 
   moveButtonTo(randomWidth, randomHeight);
-});
+};
+
+noButton.addEventListener("click", handleNoButton);
+noButton.addEventListener("mouseover", handleNoButton);
 
 yesButton.addEventListener("click", () => {
   title.textContent = "Só bora";
